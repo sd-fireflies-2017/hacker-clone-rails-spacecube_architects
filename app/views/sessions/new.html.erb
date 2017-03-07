@@ -1,0 +1,13 @@
+<h5>Log In Form</h5>
+
+<%= form_for :session, url: sessions_path, method: :post do |f| %>
+  <p>
+    <%= f.label :email, 'Email bruh' %>
+    <%= f.text_field :email, size: '40', value: @user.email %>
+  </p>
+  <p>
+    <%= f.label :password %>
+    <%= f.password_field :password, size: '40' %>
+  </p>
+  <%= f.submit 'Log in' %>
+<% end %>

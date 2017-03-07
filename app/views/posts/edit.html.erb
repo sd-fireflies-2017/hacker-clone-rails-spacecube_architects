@@ -1,0 +1,15 @@
+<h1>Edit Post</h1>
+
+<%= form_for :post, url: post_path, method: :put do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title, size: "40", value: @post.title %>
+  </p>
+  <p>
+    <%= f.label :body %><br>
+    <%= f.text_area :body, cols: "40", rows: "8", value: @post.body %>
+  </p>
+  <p>
+    <%= f.submit value: "Edit" %>
+  </p>
+<% end %>

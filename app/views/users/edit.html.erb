@@ -1,0 +1,17 @@
+<h1>Edit old user....</h1>
+
+<%= form_for :user, url: user_path, method: :put do |f| %>
+  <p>
+    <%= f.label :username %>
+    <%= f.text_field :username, size: '40', value: @user.username %>
+  </p>
+  <p>
+    <%= f.label :email %>
+    <%= f.text_field :email, size: '40', value: @user.email %>
+  </p>
+  <p>
+    <%= f.label :bio %>
+    <%= f.text_area :bio, cols: '40', rows: '8', value: @user.bio %>
+  </p>
+  <%= f.submit 'Edit in' %>
+<% end %>

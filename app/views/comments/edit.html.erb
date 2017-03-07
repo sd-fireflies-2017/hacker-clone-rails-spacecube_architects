@@ -1,0 +1,11 @@
+<h1>change your tone?</h1>
+
+<%= form_for :comment, url: comments_path, method: :put  do |f| %>
+  <p>
+    <%= f.label :body %><br>
+    <%= f.text_area :body, cols: "40", rows: "8", value: @comment.body %>
+  </p>
+  <p>
+    <%= f.submit value: "my bad" %>
+  </p>
+<% end %>

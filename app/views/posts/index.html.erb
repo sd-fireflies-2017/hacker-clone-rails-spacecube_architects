@@ -1,0 +1,26 @@
+<h1 class='text-center'> sup, foo? </h1>
+
+<ul class='posts'>
+  <% @posts.each do |post| %>
+    <li class='post-item'>
+      <div>
+        <div>
+          <span class='post-points'><%= voteNet(post) %></span>
+          <span><%= link_to post.title, post_path(post) %></span>
+        </div>
+        <p>
+          <span>By: <%= post.author.username %></span>
+          <span>
+            <% if logged_in? && current_user == post.author %>
+                <%= link_to 'Edit', edit_post_path(post) %>
+                <%= link_to 'Delete', post_path(post),
+                  method: :delete,
+                  data: { confirm: 'Are you sure?' } %>
+            <% end %>
+          </span>
+        </p>
+      </div>
+    </li>
+  <% end %>
+</ul>
+

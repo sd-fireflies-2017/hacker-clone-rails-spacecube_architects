@@ -1,0 +1,15 @@
+<h1><%= @post.title %></h1>
+<div>
+  <p><%= @post.body %></p>
+  <p>By: <%= @post.author.username %></p>
+</div>
+<h4><%=link_to "Add new comment", new_post_comment_path(@post.id)  %></h4>
+<h2>Comments:</h2>
+<ul>
+  <% @post.comments.each do |comment| %>
+    <li>
+      <p><%= comment.body %></p>
+      <p>– <%= comment.author.username %></p>
+    </li>
+  <% end %>
+</ul>

@@ -1,0 +1,19 @@
+<h1><%= @user.username %></h1>
+<h2><%= @user.email %></h2>
+<div>
+  <h2>Bio</h2>
+  <p><%= @user.bio ? @user.bio : 'i am boring' %></p>
+  <p><%= link_to 'Edit', edit_user_path %></p>
+</div>
+
+<h2>Posts</h2>
+<div>
+  <ul>
+    <% @user.posts.each do |post| %>
+      <li>
+        <p><%= link_to post.title, post_path(post) %></p>
+        <p><%= post.body %></p>
+      </li>
+    <% end %>
+  </ul>
+</div>

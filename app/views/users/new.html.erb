@@ -1,0 +1,17 @@
+<h1>Create new user....</h1>
+
+<%= form_for :user, url: users_path, method: :post do |f| %>
+  <p>
+    <%= f.label :username %>
+    <%= f.text_field :username, size: '40', value: @user.username %>
+  </p>
+  <p>
+    <%= f.label :email %>
+    <%= f.text_field :email, size: '40', value: @user.email %>
+  </p>
+  <p>
+    <%= f.label :password %>
+    <%= f.password_field :password, size: '40' %>
+  </p>
+  <%= f.submit 'Create in' %>
+<% end %>

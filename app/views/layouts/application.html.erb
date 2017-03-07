@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HackerNewsClone</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <nav class='text-center'>
+    <%= link_to 'Home', posts_path %> |
+    <% if logged_in? %>
+      <%= link_to 'Create New Post', new_post_path %> |
+      <%= link_to current_user.username, user_path(current_user) %> |
+      <%= link_to 'Log Out', session_path(session), method: :delete %>
+    <% else %>
+      <%= link_to 'Register', new_user_path %> |
+      <%= link_to 'Login', new_session_path %>
+    <% end %>
+  </nav>
+<%= yield %>
+
+</body>
+</html>
