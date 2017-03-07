@@ -6,6 +6,10 @@
       <div>
         <div>
           <span class='post-points'><%= voteNet(post) %></span>
+          <% if logged_in? %>
+            <span class='post_up'><%= link_to "\u2B06", post_votes_path(post)%></span>
+            <span class='post_down'><%= link_to "\u2B07", post_votes_path(post), method: :post %></span>
+          <% end %>
           <span><%= link_to post.title, post_path(post) %></span>
         </div>
         <p>
